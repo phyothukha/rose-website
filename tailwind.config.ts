@@ -8,6 +8,11 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        orpheus: ["var(--font-OrpheusPro-mono)"],
+        twentienty: ["var(--font-twentientyOneFont-mono)"],
+      },
+
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

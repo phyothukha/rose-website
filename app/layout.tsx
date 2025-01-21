@@ -1,23 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { orpheusProFont, twentientyOneFont } from "@/font";
 
 export const metadata: Metadata = {
   title: "Rosé - Myanmar Fan Group",
   description:
     "Discover the artistry of sushi at its finest. From fresh ingredients to time-honored techniques, every dish is crafted to delight your senses. Indulge in a journey of authentic flavors and modern twists, only at MYANSHI.",
   icons: {
-    icon: [{ url: "/assets/fav-icon.svg" }],
+    icon: [{ url: "/favicon.svg" }],
   },
   keywords: ["Phyo Thu Kha", "phyothukha", "myanmar sushi"],
   openGraph: {
@@ -40,12 +30,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html
+      lang="en"
+      className={`${orpheusProFont.variable} ${twentientyOneFont.variable}`}
+    >
+      <body>{children}</body>
     </html>
   );
 }
