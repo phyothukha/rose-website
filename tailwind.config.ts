@@ -11,6 +11,7 @@ export default {
       fontFamily: {
         orpheus: ["var(--font-OrpheusPro-mono)"],
         twentienty: ["var(--font-twentientyOneFont-mono)"],
+        markoOne: "Marko One, serif",
       },
 
       colors: {

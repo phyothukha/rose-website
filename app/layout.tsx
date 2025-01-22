@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { orpheusProFont, twentientyOneFont } from "@/font";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Rosé - Myanmar Fan Group",
@@ -34,7 +35,10 @@ export default function RootLayout({
       lang="en"
       className={`${orpheusProFont.variable} ${twentientyOneFont.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

@@ -15,6 +15,11 @@ const orpheusProFont = localFont({
   src: "../assets/font/OrpheusPro-Bold.ttf",
   variable: "--font-OrpheusPro-mono",
 });
+
+const markoOneFont = localFont({
+  src: "../assets/font/MarkoOne-Regular.ttf",
+  variable: "--font-markoOne-mono",
+});
 const twentientyOneFont = localFont({
   src: [
     {
@@ -41,4 +46,10 @@ const twentientyOneFont = localFont({
   variable: "--font-twentientyOneFont-mono",
 });
 
-export { geistSans, geistMono, orpheusProFont, twentientyOneFont };
+export {
+  geistSans,
+  geistMono,
+  orpheusProFont,
+  markoOneFont,
+  twentientyOneFont,
+};
