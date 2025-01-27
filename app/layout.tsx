@@ -35,7 +35,7 @@ export default function RootLayout({
       lang="en"
       className={`${orpheusProFont.variable} ${twentientyOneFont.variable}`}
     >
-      <body>
+      <body className=" w-screen overflow-hidden">
         <Header />
         {children}
       </body>
