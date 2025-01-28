@@ -39,129 +39,129 @@ const Header = () => {
   const toggleMenu = () => setShow(!show);
 
   return (
-    <main className="bg-gray-50 ">
-      <header className="container md:max-w-7xl h-[80px] flex items-center justify-between mx-auto overflow-hidden w-full">
-        {/* Desktop Navigation */}
-        <ul className="hidden lg:flex gap-5">
-          {navLinks.map(({ name, path, href }) => {
-            const isActive = pathname === href;
-            return (
-              <li key={name} className="cursor-pointer select-none">
-                <Link
-                  href={href}
-                  className={`font-twentienty transition-transform text-black ease-in duration-500 text-[18px] ${
-                    isActive
-                      ? "font-semibold text-opacity-100"
-                      : "font-light text-opacity-55"
-                  }`}
-                >
-                  {path}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-
-        <nav>
-          <Link
-            href="/"
-            className="font-markoOne font-medium text-[28px] text-[#A12636]"
-          >
-            Rosé
-          </Link>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button onClick={toggleMenu} className="lg:hidden">
-          <div className="flex flex-col gap-1 transition-all duration-700 ease-in">
-            <span
-              className={`w-6 h-[2.1px] bg-black inline-block transition-all duration-500 ease-in ${
-                show && "transform rotate-45 translate-y-[5px]"
-              }`}
-            ></span>
-            <span
-              className={`w-6 h-[2.1px] bg-black inline-block transition-all duration-500 ease-in  ${
-                show && "transform translate-x-4 opacity-0"
-              }`}
-            ></span>
-            <span
-              className={`w-6 h-[2.1px] bg-black inline-block transition-all duration-500 ease-in ${
-                show && "transform -rotate-45 -translate-y-[8px]"
-              }`}
-            ></span>
-          </div>
-        </button>
-
-        {/* Social Links */}
-        <nav className="hidden lg:flex w-[400px] justify-end gap-7 items-center">
-          {socials.map(({ name, icon }) => (
-            <Image
-              key={name}
-              width={name === "youtube" ? 26 : name === "tiktok" ? 18 : 20}
-              height={22.86}
-              className="object-contain cursor-pointer"
-              src={icon}
-              alt={`${name} icon`}
-            />
-          ))}
-        </nav>
-      </header>
-      <div
-        className={`${
-          show &&
-          "h-screen w-full md:hidden absolute bg-opacity-35 top-0 right-0 bottom-0 duration-500 ease-in transition-all"
-        }`}
-      >
-        <nav
-          className={`h-screen bg-white top-0 right-0 py-2 ps-10 pe-3 absolute    shadow-sm transform transition-all duration-700 ease-linear ${
-            show ? "translate-x-0 w-5/6" : "translate-x-full w-0 "
-          }`}
-        >
-          <div className="w-full flex justify-end">
-            <Image
-              src={xIcon}
-              alt="Close menu"
-              width={25}
-              height={25}
-              className="cursor-pointer"
-              onClick={toggleMenu}
-            />
-          </div>
-          <ul className=" flex flex-col gap-7">
+    <div>
+      <main className="bg-gray-50 fixed top-0 right-0 left-0 bottom-0  z-50 shadow-sm  h-[80px]">
+        <header className="container md:max-w-7xl  flex items-center h-full justify-between mx-auto overflow-hidden w-full">
+          <ul className="hidden lg:flex gap-5">
             {navLinks.map(({ name, path, href }) => {
               const isActive = pathname === href;
               return (
-                <li key={name} className="mb-3">
+                <li key={name} className="cursor-pointer select-none">
                   <Link
                     href={href}
-                    className={`text-black text-lg font-twentienty  ${
+                    className={`font-twentienty transition-transform text-black ease-in duration-500 text-[18px] ${
                       isActive
                         ? "font-semibold text-opacity-100"
                         : "font-light text-opacity-55"
                     }`}
-                    onClick={toggleMenu}
                   >
                     {path}
                   </Link>
                 </li>
               );
             })}
-            <li className=" flex gap-6">
-              {socials.map(({ name, icon }) => (
-                <Image
-                  key={name}
-                  width={name === "youtube" ? 26 : name === "tiktok" ? 18 : 20}
-                  height={22.86}
-                  className="object-contain cursor-pointer"
-                  src={icon}
-                  alt={`${name} icon`}
-                />
-              ))}
-            </li>
           </ul>
-        </nav>
-      </div>
-    </main>
+
+          <nav>
+            <Link
+              href="/"
+              className="font-markoOne font-medium text-[28px] text-[#A12636]"
+            >
+              Rosé
+            </Link>
+          </nav>
+
+          <button onClick={toggleMenu} className="lg:hidden">
+            <div className="flex flex-col gap-1 transition-all duration-700 ease-in">
+              <span
+                className={`w-6 h-[2.1px] bg-black inline-block transition-all duration-500 ease-in ${
+                  show && "transform rotate-45 translate-y-[5px]"
+                }`}
+              ></span>
+              <span
+                className={`w-6 h-[2.1px] bg-black inline-block transition-all duration-500 ease-in  ${
+                  show && "transform translate-x-4 opacity-0"
+                }`}
+              ></span>
+              <span
+                className={`w-6 h-[2.1px] bg-black inline-block transition-all duration-500 ease-in ${
+                  show && "transform -rotate-45 -translate-y-[8px]"
+                }`}
+              ></span>
+            </div>
+          </button>
+          <nav className="hidden lg:flex w-[400px] justify-end gap-7 items-center">
+            {socials.map(({ name, icon }) => (
+              <Image
+                key={name}
+                width={name === "youtube" ? 26 : name === "tiktok" ? 18 : 20}
+                height={22.86}
+                className="object-contain cursor-pointer"
+                src={icon}
+                alt={`${name} icon`}
+              />
+            ))}
+          </nav>
+        </header>
+        <div
+          className={`${
+            show &&
+            "h-screen w-full md:hidden absolute bg-opacity-35 top-0 right-0 bottom-0 duration-500 ease-in transition-all"
+          }`}
+        >
+          <nav
+            className={`h-screen bg-white top-0 right-0 py-2 ps-10 pe-3 absolute    shadow-sm transform transition-all duration-700 ease-linear ${
+              show ? "translate-x-0 w-5/6" : "translate-x-full w-0 "
+            }`}
+          >
+            <div className="w-full flex justify-end">
+              <Image
+                src={xIcon}
+                alt="Close menu"
+                width={25}
+                height={25}
+                className="cursor-pointer"
+                onClick={toggleMenu}
+              />
+            </div>
+            <ul className=" flex flex-col gap-7">
+              {navLinks.map(({ name, path, href }) => {
+                const isActive = pathname === href;
+                return (
+                  <li key={name} className="mb-3">
+                    <Link
+                      href={href}
+                      className={`text-black text-lg font-twentienty  ${
+                        isActive
+                          ? "font-semibold text-opacity-100"
+                          : "font-light text-opacity-55"
+                      }`}
+                      onClick={toggleMenu}
+                    >
+                      {path}
+                    </Link>
+                  </li>
+                );
+              })}
+              <li className=" flex gap-6">
+                {socials.map(({ name, icon }) => (
+                  <Image
+                    key={name}
+                    width={
+                      name === "youtube" ? 26 : name === "tiktok" ? 18 : 20
+                    }
+                    height={22.86}
+                    className="object-contain cursor-pointer"
+                    src={icon}
+                    alt={`${name} icon`}
+                  />
+                ))}
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </main>
+    </div>
   );
 };
 

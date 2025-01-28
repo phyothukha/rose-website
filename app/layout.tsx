@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { orpheusProFont, twentientyOneFont } from "@/font";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Rosé - Myanmar Fan Group",
@@ -35,9 +36,12 @@ export default function RootLayout({
       lang="en"
       className={`${orpheusProFont.variable} ${twentientyOneFont.variable}`}
     >
-      <body className=" w-screen overflow-hidden">
-        <Header />
-        {children}
+      <body>
+        <main className=" min-h-screen flex flex-col">
+          <Header />
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   );
