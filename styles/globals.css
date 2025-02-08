@@ -21,3 +21,15 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.btn {
+  @apply w-[127px] h-[45px]  text-[16px] font-twentienty font-semibold justify-center  relative flex items-center gap-3 text-center;
+}
+
+.btn::before {
+  @apply content-[''] absolute top-10 transition-all duration-700 w-full left-0 h-[2px] bg-black;
+}
+
+.btn::before:hover {
+  @apply content-[''] h-full top-0;
+}

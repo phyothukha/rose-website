@@ -35,13 +35,12 @@ interface NavLink {
 const Header = () => {
   const pathname = usePathname();
   const [show, setShow] = useState<boolean>(false);
-
   const toggleMenu = () => setShow(!show);
 
   return (
-    <div>
+    <header>
       <main className="bg-gray-50 fixed top-0 right-0 left-0 bottom-0  z-50 shadow-sm  h-[80px]">
-        <header className="container md:max-w-7xl  flex items-center h-full justify-between mx-auto overflow-hidden w-full">
+        <nav className="container md:max-w-7xl  flex items-center h-full justify-between mx-auto overflow-hidden w-full">
           <ul className="hidden lg:flex gap-5">
             {navLinks.map(({ name, path, href }) => {
               const isActive = pathname === href;
@@ -62,14 +61,12 @@ const Header = () => {
             })}
           </ul>
 
-          <nav>
-            <Link
-              href="/"
-              className="font-markoOne font-medium text-[28px] text-[#A12636]"
-            >
-              Rosé
-            </Link>
-          </nav>
+          <Link
+            href="/"
+            className="font-markoOne font-medium text-[28px] text-[#A12636]"
+          >
+            Rosé
+          </Link>
 
           <button onClick={toggleMenu} className="lg:hidden">
             <div className="flex flex-col gap-1 transition-all duration-700 ease-in">
@@ -90,7 +87,7 @@ const Header = () => {
               ></span>
             </div>
           </button>
-          <nav className="hidden lg:flex w-[400px] justify-end gap-7 items-center">
+          <div className="hidden lg:flex w-[400px] justify-end gap-7 items-center">
             {socials.map(({ name, icon }) => (
               <Image
                 key={name}
@@ -101,15 +98,15 @@ const Header = () => {
                 alt={`${name} icon`}
               />
             ))}
-          </nav>
-        </header>
-        <div
+          </div>
+        </nav>
+        <nav
           className={`${
             show &&
-            "h-screen w-full md:hidden absolute bg-opacity-35 top-0 right-0 bottom-0 duration-500 ease-in transition-all"
+            "h-screen w-full inline-block lg:hidden absolute bg-opacity-35 top-0 right-0 bottom-0 duration-500 ease-in transition-all"
           }`}
         >
-          <nav
+          <div
             className={`h-screen bg-white top-0 right-0 py-2 ps-10 pe-3 absolute    shadow-sm transform transition-all duration-700 ease-linear ${
               show ? "translate-x-0 w-5/6" : "translate-x-full w-0 "
             }`}
@@ -158,10 +155,10 @@ const Header = () => {
                 ))}
               </li>
             </ul>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </main>
-    </div>
+    </header>
   );
 };
 

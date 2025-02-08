@@ -15,11 +15,11 @@ import { Autoplay } from "swiper/modules";
 
 const HeroSection = () => {
   return (
-    <section className=" mt-20 max-h-[650px]">
+    <section className=" mt-20 max-h-[650px] h-full">
       <Swiper
         centeredSlides={true}
         autoplay={{
-          delay: 1000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -30,17 +30,16 @@ const HeroSection = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className="  lg:h-[650px] md:max-h-[650px] max-h-[220px] ">
+          <div className="  lg:h-[650px] lg:max-h-[650px] md:max-h-[650px] ">
             <Image
               src={Rose1}
-              width={1512}
               alt=""
-              className=" object-contain lg:object-cover 2xl:object-fill  object-top lg:object-bottom h-[768px] w-full max-w-full mx-auto"
+              className=" object-contain lg:object-cover 2xl:object-fill  object-top lg:object-[0px_-240px] h-[768px] w-full max-w-full mx-auto"
             />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="  lg:h-[650px] md:max-h-[650px] max-h-[220px] ">
+          <div className="  lg:h-[650px] lg:max-h-[650px] md:max-h-[650px] ">
             <Image
               src={Rose2}
               alt=""
@@ -49,7 +48,7 @@ const HeroSection = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="  lg:h-[650px] md:max-h-[650px] max-h-[220px] ">
+          <div className="  lg:h-[650px] lg:max-h-[650px] md:max-h-[650px] ">
             <Image
               src={Rose3}
               alt=""

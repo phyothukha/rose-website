@@ -32,10 +32,10 @@ const Footer = () => {
                 name === "instagram"
                   ? 25
                   : name === "youtube"
-                  ? 28
-                  : name === "tiktok"
-                  ? 20
-                  : 22
+                    ? 28
+                    : name === "tiktok"
+                      ? 20
+                      : 22
               }
               height={
                 name === "instagram" ? 25 : name === "youtube" ? 28 : 29.3
