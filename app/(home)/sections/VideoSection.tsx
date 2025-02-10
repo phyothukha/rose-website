@@ -137,7 +137,6 @@ const VideoSection = () => {
             );
           })}
         </Swiper>
-
         {/*===== Left Arrow ===== */}
         <div className="flex items-center justify-center mt-4">
           <div ref={prevRef} className="cursor-pointer">
