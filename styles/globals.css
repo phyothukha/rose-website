@@ -23,13 +23,19 @@ body {
 }
 
 .btn {
-  @apply w-[127px] h-[45px]  text-[16px] font-twentienty font-semibold justify-center  relative flex items-center gap-3 text-center;
+  @apply w-[127px] h-[45px] text-[16px] font-twentienty font-semibold 
+  justify-center relative flex items-center gap-3 text-center;
 }
 
 .btn::before {
-  @apply content-[''] absolute top-10 transition-all duration-700 w-full left-0 h-[2px] bg-black;
+  @apply content-[''] absolute top-10 transition-all duration-700 w-full 
+  left-0 h-[2px] bg-black;
 }
 
-.btn::before:hover {
-  @apply content-[''] h-full top-0;
+.btn:hover::before {
+  @apply h-full top-0 -z-20 bg-black rounded-md;
+}
+
+.swiper-pagination-bullet-active {
+  @apply !bg-black;
 }

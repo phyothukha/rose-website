@@ -9,6 +9,7 @@ import youtube from "@/assets/icons/youtube-brands-solid.svg";
 const AlbumSection = () => {
   return (
     <section className=" container mx-auto max-w-7xl pt-[70px]">
+      {/* ==== Album Header ===== */}
       <div className=" flex justify-between mb-[36px] w-full">
         <h1 className=" font-orpheus font-bold text-[36px]">Latest Album</h1>
         <Link
@@ -34,17 +35,17 @@ const AlbumSection = () => {
         </Link>
       </div>
 
-      <div className=" flex w-full items-center gap-14  ">
-        <div className="">
+      <div className=" grid grid-cols-1 lg:grid-cols-2 w-full items-center gap-10">
+        <div className=" col-span-1">
           <Image
             src={Rose_album}
             height={500}
-            width={520}
+            width={500}
             alt=""
-            className=" object-cover object-center "
+            className=" object-cover w-full mx-auto object-center "
           />
         </div>
-        <div className=" flex flex-col w-1/2 ">
+        <div className=" flex flex-col col-span-1">
           <div className="  flex flex-col gap-[36px] mb-[70px] ">
             <div className=" flex flex-col gap-[4px]">
               <h1 className=" font-orpheus font-bold text-[36px]">Rosie</h1>
@@ -70,35 +71,43 @@ const AlbumSection = () => {
             </h3>
 
             <div className=" flex gap-5">
-              <button className=" btn ">
+              <button className="btn group">
                 <Image
                   src={spotify}
-                  alt=""
+                  alt="Spotify"
                   width={18}
                   height={18}
-                  className=" object-contain"
+                  className="object-contain transition-colors duration-500  group-hover:invert"
                 />
-                Spotify
+                <span className="transition-colors duration-500 group-hover:text-white">
+                  Spotify
+                </span>
               </button>
-              <button className=" btn">
+
+              <button className="btn group">
                 <Image
                   src={apple}
-                  alt=""
+                  alt="Apple"
                   width={16}
                   height={16}
-                  className=" object-contain fill-red-600 text-red-500"
+                  className="object-contain transition-colors duration-500  group-hover:invert"
                 />
-                Music
+                <span className="transition-colors duration-500 group-hover:text-white">
+                  Music
+                </span>
               </button>
-              <button className=" btn">
+
+              <button className="btn group">
                 <Image
                   src={youtube}
-                  alt=""
+                  alt="Youtube"
                   width={20}
                   height={20}
-                  className=" object-contain"
+                  className="object-contain transition-colors duration-500  group-hover:invert"
                 />
-                Youtube
+                <span className="transition-colors duration-500 group-hover:text-white">
+                  Youtube
+                </span>
               </button>
             </div>
           </div>
