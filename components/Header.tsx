@@ -40,7 +40,7 @@ const Header = () => {
   return (
     <header>
       <main className="bg-gray-50 fixed top-0 right-0 left-0 bottom-0  z-50 shadow-sm  h-[80px]">
-        <nav className="container md:max-w-7xl  flex items-center h-full justify-between mx-auto overflow-hidden w-full">
+        <nav className="container md:max-w-6xl  flex items-center h-full justify-between mx-auto overflow-hidden w-full">
           <ul className="hidden lg:flex gap-5">
             {navLinks.map(({ name, path, href }) => {
               const isActive = pathname === href;

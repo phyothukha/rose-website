@@ -38,7 +38,7 @@ const VideoSection = () => {
 
   return (
     <section>
-      <div className="container mx-auto max-w-7xl pt-16 ">
+      <div className="container mx-auto max-w-6xl pt-16 ">
         {/* ===== Video Header ===== */}
         <div className=" flex justify-between mb-[36px] w-full">
           <h1 className=" font-orpheus font-bold text-[36px]">Video</h1>

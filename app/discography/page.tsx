@@ -1,9 +1,10 @@
 import React from "react";
+import DiscographySection from "./sections/DiscographySection";
 
 const DiscoGraphyPage = () => {
   return (
     <div>
-      <h1>Hello DiscoGraphy</h1>
+      <DiscographySection />
     </div>
   );
 };

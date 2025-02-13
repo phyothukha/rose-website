@@ -5,7 +5,7 @@ import blacpink from "@/assets/blackpink-page/0eb84ab6-37c5-44bb-98e1-3a6ed02527
 
 const BlackpinkSection = () => {
   return (
-    <section className=" container max-w-7xl mx-auto ">
+    <section className=" container max-w-6xl mx-auto ">
       <div className=" flex justify-between mb-[36px] w-full">
         <h1 className=" font-orpheus font-bold text-[36px]">BLACK PINK</h1>
         <Link
@@ -31,12 +31,12 @@ const BlackpinkSection = () => {
         </Link>
       </div>
 
-      <div className=" max-w-5xl  mx-auto ">
+      <div className=" max-w-4xl bg-red-400 h-[600px]  mx-auto">
         <Image
           src={blacpink}
           alt=""
-          height={500}
-          className=" w-full h-full  object-cover"
+          height={700}
+          className="  object-fill w-full h-full  mx-auto my-auto  "
         />
       </div>
     </section>
