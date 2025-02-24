@@ -14,7 +14,7 @@ const DiscographySection = () => {
 
       <div className=" grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-5">
         <div className=" col-span-1  ">
-          <div className=" bg-gray-200 rounded-md overflow-hidden">
+          <div className=" bg-gray-200 cursor-pointer rounded-md overflow-hidden">
             <Image
               src={rosie}
               alt=""
@@ -27,7 +27,7 @@ const DiscographySection = () => {
           </div>
         </div>
         <div className=" col-span-1">
-          <div className=" bg-gray-200 rounded-md overflow-hidden">
+          <div className=" bg-gray-200 cursor-pointer rounded-md overflow-hidden">
             <Image
               src={apt}
               alt=""
@@ -40,7 +40,7 @@ const DiscographySection = () => {
           </div>
         </div>{" "}
         <div className=" col-span-1">
-          <div className=" bg-gray-200 rounded-md overflow-hidden">
+          <div className=" bg-gray-200 cursor-pointer rounded-md overflow-hidden">
             <Image
               src={R_Album}
               alt=""
@@ -54,7 +54,45 @@ const DiscographySection = () => {
         </div>
       </div>
 
-      <div></div>
+      <div className=" w-full flex items-center gap-5 my-20 justify-center">
+        <div>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 8L2 12M2 12L6 16M2 12H22"
+              stroke="#BCBCBC"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+        <div className=" w-10 h-10 flex justify-center items-center bg-black rounded-full text-white">
+          1
+        </div>
+        <div>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 8L22 12M22 12L18 16M22 12H2"
+              stroke="#BCBCBC"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
     </section>
   );
 };
