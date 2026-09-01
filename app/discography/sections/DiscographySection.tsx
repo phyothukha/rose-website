@@ -1,60 +1,24 @@
-import Image from "next/image";
 import React from "react";
-
-import R_Album from "@/assets/album-img/Rosé_-_R.png";
-import rosie from "@/assets/album-img/Rosé_-_Rosie.png";
-import apt from "@/assets/album-img/Rosé_and_Bruno_Mars_-_Apt..png";
+import { albums } from "../albums";
+import AlbumCard from "../AlbumCard";
+import Pagination from "@/components/Pagination";
 
 const DiscographySection = () => {
   return (
-    <section className=" container mx-auto max-w-6xl pt-28 px-10 md:px-3">
-      <div className=" flex justify-center mb-[36px] w-full">
-        <h1 className=" font-orpheus font-bold text-[36px]">Discography</h1>
-      </div>
+    <section className="mt-20 pt-9 pb-[70px] bg-white text-[#141414]">
+      <div className="container mx-auto max-w-6xl px-10 md:px-3">
+        <h1 className="font-orpheus font-bold text-[36px] text-center mb-10">
+          Discography
+        </h1>
 
-      <div className=" grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-5">
-        <div className=" col-span-1  ">
-          <div className=" bg-gray-200 rounded-md overflow-hidden">
-            <Image
-              src={rosie}
-              alt=""
-              className=" h-full mx-auto object-contain w-full"
-            />
-            <div className=" p-5 text-center">
-              <h4>Rosie</h4>
-              <p>Released 06.12.2024</p>
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {albums.map((album) => (
+            <AlbumCard key={album.slug} {...album} />
+          ))}
         </div>
-        <div className=" col-span-1">
-          <div className=" bg-gray-200 rounded-md overflow-hidden">
-            <Image
-              src={apt}
-              alt=""
-              className=" h-full mx-auto object-contain w-full"
-            />
-            <div className=" p-5 text-center">
-              <h4>APT</h4>
-              <p>Released 18.10.2024</p>
-            </div>
-          </div>
-        </div>{" "}
-        <div className=" col-span-1">
-          <div className=" bg-gray-200 rounded-md overflow-hidden">
-            <Image
-              src={R_Album}
-              alt=""
-              className=" h-full mx-auto object-contain w-full"
-            />
-            <div className=" p-5 text-center">
-              <h4>R</h4>
-              <p>Released 12.03.2021</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div></div>
+        <Pagination currentPage={1} totalPages={1} basePath="/discography" />
+      </div>
     </section>
   );
 };

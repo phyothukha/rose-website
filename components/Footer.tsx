@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 import instagram from "@/assets/icons/instagram-brands-solid.svg";
@@ -76,7 +77,14 @@ const Footer = () => {
             </defs>
           </svg>
           <p className=" font-twentienty font-medium text-[16px]">
-            Rosé All Rights Reserved. | Privacy Policy | Terms of Use
+            Rosé All Rights Reserved. |{" "}
+            <Link href="/privacy-policy" className="hover:underline">
+              Privacy Policy
+            </Link>{" "}
+            |{" "}
+            <Link href="/terms-of-use" className="hover:underline">
+              Terms of Use
+            </Link>
           </p>
         </div>
       </div>

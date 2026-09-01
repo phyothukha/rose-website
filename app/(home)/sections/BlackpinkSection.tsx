@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import blacpink from "@/assets/blackpink-page/0eb84ab6-37c5-44bb-98e1-3a6ed02527ea.jpg";
+import blacpink from "@/assets/blackpink-page/blackpink-group.jpg";
 
 const BlackpinkSection = () => {
   return (

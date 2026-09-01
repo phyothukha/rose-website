@@ -2,9 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Rose_album from "@/assets/album-img/Rosé_-_Rosie.png";
-import spotify from "@/assets/icons/spotify-brands-solid.svg";
-import apple from "@/assets/icons/apple-brands-solid.svg";
-import youtube from "@/assets/icons/youtube-brands-solid.svg";
+import AvailableOn from "@/components/AvailableOn";
 
 const AlbumSection = () => {
   return (
@@ -65,52 +63,7 @@ const AlbumSection = () => {
               soloist on the chart
             </p>
           </div>
-          <div className=" flex flex-col gap-[24px]">
-            <h3 className=" uppercase font-orpheus font-bold text-[20px] ">
-              Available On
-            </h3>
-
-            <div className=" flex gap-5">
-              <button className="btn group">
-                <Image
-                  src={spotify}
-                  alt="Spotify"
-                  width={18}
-                  height={18}
-                  className="object-contain transition-colors duration-500  group-hover:invert"
-                />
-                <span className="transition-colors duration-500 group-hover:text-white">
-                  Spotify
-                </span>
-              </button>
-
-              <button className="btn group">
-                <Image
-                  src={apple}
-                  alt="Apple"
-                  width={16}
-                  height={16}
-                  className="object-contain transition-colors duration-500  group-hover:invert"
-                />
-                <span className="transition-colors duration-500 group-hover:text-white">
-                  Music
-                </span>
-              </button>
-
-              <button className="btn group">
-                <Image
-                  src={youtube}
-                  alt="Youtube"
-                  width={20}
-                  height={20}
-                  className="object-contain transition-colors duration-500  group-hover:invert"
-                />
-                <span className="transition-colors duration-500 group-hover:text-white">
-                  Youtube
-                </span>
-              </button>
-            </div>
-          </div>
+          <AvailableOn />
         </div>
       </div>
     </section>

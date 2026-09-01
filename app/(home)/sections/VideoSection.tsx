@@ -2,10 +2,9 @@
 import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 import apt from "@/assets/video-cover-img/apt.png";
 import toxic from "@/assets/video-cover-img/toxic.jpg";
 import nonegirl from "@/assets/video-cover-img/n0negirl.png";
@@ -17,6 +16,8 @@ const videoData = [
   { id: 2, title: "ROSÉ - toxic till the end", image: toxic },
   { id: 3, title: "ROSÉ - number one girl", image: nonegirl },
 ];
+
+const loopVideoData = [...videoData, ...videoData, ...videoData];
 
 const VideoSection = () => {
   const prevRef = useRef<HTMLDivElement | null>(null);
@@ -69,15 +70,13 @@ const VideoSection = () => {
       <div className="relative">
         <Swiper
           ref={swiperRef}
-          modules={[Navigation, Pagination, Autoplay]}
+          modules={[Navigation, Autoplay]}
           slidesPerView={1.2}
+          spaceBetween={24}
+          wrapperClass="items-center"
           centeredSlides={true}
           slideToClickedSlide={true}
           loop
-          pagination={{
-            el: ".custom-pagination",
-            clickable: true,
-          }}
           navigation={{
             prevEl: prevRef.current,
             nextEl: nextRef.current,
@@ -93,17 +92,14 @@ const VideoSection = () => {
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           className="w-full"
         >
-          {videoData.map((video, index) => {
+          {loopVideoData.map((video, index) => {
+            const total = loopVideoData.length;
             const isActive = index === activeIndex;
-            const isPrev =
-              index === activeIndex - 1 ||
-              (activeIndex === 0 && index === videoData.length - 1);
-            const isNext =
-              index === activeIndex + 1 ||
-              (activeIndex === videoData.length - 1 && index === 0);
+            const isPrev = index === (activeIndex - 1 + total) % total;
+            const isNext = index === (activeIndex + 1) % total;
 
             return (
-              <SwiperSlide key={video.id}>
+              <SwiperSlide key={`${video.id}-${index}`}>
                 <div
                   className={`relative group overflow-hidden shadow-lg transition-transform duration-500 ${
                     isActive
@@ -149,7 +145,21 @@ const VideoSection = () => {
           </div>
 
           {/*===== Pagination Dots =====*/}
-          <div className="custom-pagination flex space-x-5 !w-auto"></div>
+          <div className="flex items-center space-x-5">
+            {videoData.map((video, i) => (
+              <button
+                key={video.id}
+                type="button"
+                aria-label={`Go to ${video.title}`}
+                onClick={() => swiperRef.current?.swiper.slideToLoop(i)}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  i === activeIndex % videoData.length
+                    ? "bg-black"
+                    : "bg-black/20"
+                }`}
+              />
+            ))}
+          </div>
 
           {/*===== Right Arrow =====*/}
 

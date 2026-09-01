@@ -32,6 +32,15 @@ interface NavLink {
   href: string;
 }
 
+const isNavActive = (href: string, name: NavLink["name"], pathname: string) => {
+  if (href === "/") {
+    return (
+      pathname === "/" || (name === "home" && pathname.startsWith("/blackpink"))
+    );
+  }
+  return pathname === href || pathname.startsWith(`${href}/`);
+};
+
 const Header = () => {
   const pathname = usePathname();
   const [show, setShow] = useState<boolean>(false);
@@ -43,7 +52,7 @@ const Header = () => {
         <nav className="container md:max-w-6xl  flex items-center h-full justify-between mx-auto overflow-hidden w-full">
           <ul className="hidden lg:flex gap-5">
             {navLinks.map(({ name, path, href }) => {
-              const isActive = pathname === href;
+              const isActive = isNavActive(href, name, pathname);
               return (
                 <li key={name} className="cursor-pointer select-none">
                   <Link
@@ -123,7 +132,7 @@ const Header = () => {
             </div>
             <ul className=" flex flex-col gap-7">
               {navLinks.map(({ name, path, href }) => {
-                const isActive = pathname === href;
+                const isActive = isNavActive(href, name, pathname);
                 return (
                   <li key={name} className="mb-3">
                     <Link
