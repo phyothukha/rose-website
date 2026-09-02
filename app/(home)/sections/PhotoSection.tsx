@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import voguePhoto from "@/assets/photo-page/vogue-hong-kong.jpg";
 import Sulwhasoo from "@/assets/photo-page/ROSE-x-Sulwhasoo.jpeg";
 import image7 from "@/assets/photo-page/image 7.png";
 import React from "react";
+import SectionCta from "@/components/SectionCta";
 
 const PhotoSection = () => {
   return (
@@ -11,27 +11,11 @@ const PhotoSection = () => {
       {/* ==== Photo Header ===== */}
       <div className=" flex justify-between mb-[36px] w-full">
         <h1 className=" font-orpheus font-bold text-[36px]">Photos</h1>
-        <Link
+        <SectionCta
           href="/photos"
-          className=" flex items-center text-[18px] font-twentienty "
-        >
-          SEE MORE
-          <svg
-            width="18"
-            height="19"
-            viewBox="0 0 18 19"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5.25 5.75H12.75M12.75 5.75V13.25M12.75 5.75L5.25 13.25"
-              stroke="#141414"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </Link>
+          label="SEE MORE"
+          className="hidden md:flex"
+        />
       </div>
 
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -70,6 +54,12 @@ const PhotoSection = () => {
           <div className="bg-black w-full h-full absolute top-0 left-0 z-20 opacity-20 transform translate-y-full group-hover:translate-y-0 transition-all duration-700 ease-in-out"></div>
         </div>
       </div>
+
+      <SectionCta
+        href="/photos"
+        label="SEE MORE"
+        className="flex md:hidden justify-center mt-10"
+      />
     </section>
   );
 };

@@ -9,7 +9,7 @@ import apt from "@/assets/video-cover-img/apt.png";
 import toxic from "@/assets/video-cover-img/toxic.jpg";
 import nonegirl from "@/assets/video-cover-img/n0negirl.png";
 import play from "@/assets/icons/play.svg";
-import Link from "next/link";
+import SectionCta from "@/components/SectionCta";
 
 const videoData = [
   { id: 1, title: "ROSÉ & Bruno Mars - APT.", image: apt },
@@ -43,27 +43,11 @@ const VideoSection = () => {
         {/* ===== Video Header ===== */}
         <div className=" flex justify-between mb-[36px] w-full">
           <h1 className=" font-orpheus font-bold text-[36px]">Video</h1>
-          <Link
+          <SectionCta
             href="/videos"
-            className=" flex items-center text-[18px] font-twentienty "
-          >
-            SEE MORE
-            <svg
-              width="18"
-              height="19"
-              viewBox="0 0 18 19"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.25 5.75H12.75M12.75 5.75V13.25M12.75 5.75L5.25 13.25"
-                stroke="#141414"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </Link>
+            label="SEE MORE"
+            className="hidden md:flex"
+          />
         </div>
       </div>
       {/* ===== Swiper Slider ===== */}
@@ -172,6 +156,14 @@ const VideoSection = () => {
             </svg>
           </div>
         </div>
+      </div>
+
+      <div className="container mx-auto max-w-6xl px-10 md:px-3">
+        <SectionCta
+          href="/videos"
+          label="SEE MORE"
+          className="flex md:hidden justify-center mt-10"
+        />
       </div>
     </section>
   );

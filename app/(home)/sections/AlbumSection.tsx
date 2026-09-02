@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import Rose_album from "@/assets/album-img/Rosé_-_Rosie.png";
 import AvailableOn from "@/components/AvailableOn";
+import SectionCta from "@/components/SectionCta";
 import { albums } from "@/app/discography/albums";
 
 const rosieAlbum = albums.find((album) => album.slug === "rosie")!;
@@ -13,30 +13,14 @@ const AlbumSection = () => {
       {/* ==== Album Header ===== */}
       <div className=" flex justify-between mb-[36px] w-full">
         <h1 className=" font-orpheus font-bold text-[36px]">Latest Album</h1>
-        <Link
+        <SectionCta
           href="/discography"
-          className=" flex items-center text-[18px] font-twentienty "
-        >
-          SEE MORE
-          <svg
-            width="18"
-            height="19"
-            viewBox="0 0 18 19"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5.25 5.75H12.75M12.75 5.75V13.25M12.75 5.75L5.25 13.25"
-              stroke="#141414"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </Link>
+          label="SEE MORE"
+          className="hidden md:flex"
+        />
       </div>
 
-      <div className=" grid grid-cols-1 lg:grid-cols-2 w-full items-center gap-10">
+      <div className=" grid grid-cols-1 md:grid-cols-2 w-full items-center gap-10">
         <div className=" col-span-1">
           <Image
             src={Rose_album}
@@ -73,6 +57,12 @@ const AlbumSection = () => {
           />
         </div>
       </div>
+
+      <SectionCta
+        href="/discography"
+        label="SEE MORE"
+        className="flex md:hidden justify-center mt-10"
+      />
     </section>
   );
 };
