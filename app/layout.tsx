@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import NextTopLoader from "nextjs-toploader";
 import "@/styles/globals.css";
 import { orpheusProFont, twentientyOneFont } from "@/font";
 import Header from "@/components/Header";
@@ -38,6 +39,7 @@ export default function RootLayout({
       className={`${orpheusProFont.variable} ${twentientyOneFont.variable}`}
     >
       <body>
+        <NextTopLoader color="#A12636" height={3} showSpinner={false} />
         <Preloader />
         <main className=" min-h-screen flex flex-col">
           <Header />

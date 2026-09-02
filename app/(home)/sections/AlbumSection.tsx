@@ -9,7 +9,7 @@ const rosieAlbum = albums.find((album) => album.slug === "rosie")!;
 
 const AlbumSection = () => {
   return (
-    <section className=" container mx-auto max-w-6xl pt-[70px]">
+    <section className=" container mx-auto max-w-6xl px-10 md:px-3 pt-[70px]">
       {/* ==== Album Header ===== */}
       <div className=" flex justify-between mb-[36px] w-full">
         <h1 className=" font-orpheus font-bold text-[36px]">Latest Album</h1>
