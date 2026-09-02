@@ -3,6 +3,9 @@ import Link from "next/link";
 import React from "react";
 import Rose_album from "@/assets/album-img/Rosé_-_Rosie.png";
 import AvailableOn from "@/components/AvailableOn";
+import { albums } from "@/app/discography/albums";
+
+const rosieAlbum = albums.find((album) => album.slug === "rosie")!;
 
 const AlbumSection = () => {
   return (
@@ -63,7 +66,11 @@ const AlbumSection = () => {
               soloist on the chart
             </p>
           </div>
-          <AvailableOn />
+          <AvailableOn
+            spotifyUrl={rosieAlbum.spotifyUrl}
+            appleMusicUrl={rosieAlbum.appleMusicUrl}
+            youtubeUrl={rosieAlbum.youtubeUrl}
+          />
         </div>
       </div>
     </section>

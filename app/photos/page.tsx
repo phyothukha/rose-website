@@ -1,8 +1,8 @@
-import Image from "next/image";
 import React from "react";
 
 import { photos } from "./photos";
 import Pagination from "@/components/Pagination";
+import PhotoGallery from "@/components/PhotoGallery";
 
 const PER_PAGE = 12;
 
@@ -24,22 +24,7 @@ const PhotoPage = async ({
           Photos
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {pagePhotos.map(({ alt, src }, i) => (
-            <div
-              key={start + i}
-              className="relative w-full aspect-[4/5] overflow-hidden"
-            >
-              <Image
-                src={src}
-                alt={alt}
-                fill
-                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                className="object-cover object-top transition-transform duration-500 hover:scale-105"
-              />
-            </div>
-          ))}
-        </div>
+        <PhotoGallery photos={pagePhotos} />
 
         <Pagination
           currentPage={currentPage}

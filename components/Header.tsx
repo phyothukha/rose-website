@@ -12,10 +12,22 @@ import twitter from "@/assets/icons/x-twitter-brands-solid.svg";
 import xIcon from "@/assets/icons/XOutline.svg";
 
 const socials = [
-  { name: "instagram", icon: instagram },
-  { name: "youtube", icon: youtube },
-  { name: "tiktok", icon: tiktok },
-  { name: "twitter", icon: twitter },
+  {
+    name: "instagram",
+    icon: instagram,
+    href: "https://www.instagram.com/roses_are_rosie/",
+  },
+  {
+    name: "youtube",
+    icon: youtube,
+    href: "https://www.youtube.com/channel/UCBo1hnzxV9rz3WVsv__Rn1g",
+  },
+  {
+    name: "tiktok",
+    icon: tiktok,
+    href: "https://www.tiktok.com/@roses_are_rosie",
+  },
+  { name: "twitter", icon: twitter, href: "https://x.com/numberonehq" },
 ];
 
 const navLinks: NavLink[] = [
@@ -97,15 +109,21 @@ const Header = () => {
             </div>
           </button>
           <div className="hidden lg:flex w-[400px] justify-end gap-7 items-center">
-            {socials.map(({ name, icon }) => (
-              <Image
+            {socials.map(({ name, icon, href }) => (
+              <a
                 key={name}
-                width={name === "youtube" ? 26 : name === "tiktok" ? 18 : 20}
-                height={22.86}
-                className="object-contain cursor-pointer"
-                src={icon}
-                alt={`${name} icon`}
-              />
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  width={name === "youtube" ? 26 : name === "tiktok" ? 18 : 20}
+                  height={22.86}
+                  className="object-contain cursor-pointer"
+                  src={icon}
+                  alt={`${name} icon`}
+                />
+              </a>
             ))}
           </div>
         </nav>
@@ -150,17 +168,23 @@ const Header = () => {
                 );
               })}
               <li className=" flex gap-6">
-                {socials.map(({ name, icon }) => (
-                  <Image
+                {socials.map(({ name, icon, href }) => (
+                  <a
                     key={name}
-                    width={
-                      name === "youtube" ? 26 : name === "tiktok" ? 18 : 20
-                    }
-                    height={22.86}
-                    className="object-contain cursor-pointer"
-                    src={icon}
-                    alt={`${name} icon`}
-                  />
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      width={
+                        name === "youtube" ? 26 : name === "tiktok" ? 18 : 20
+                      }
+                      height={22.86}
+                      className="object-contain cursor-pointer"
+                      src={icon}
+                      alt={`${name} icon`}
+                    />
+                  </a>
                 ))}
               </li>
             </ul>

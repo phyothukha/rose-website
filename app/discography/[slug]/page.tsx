@@ -73,7 +73,11 @@ const AlbumDetailPage = async ({
             </ol>
 
             <div className="mt-10">
-              <AvailableOn />
+              <AvailableOn
+                spotifyUrl={album.spotifyUrl}
+                appleMusicUrl={album.appleMusicUrl}
+                youtubeUrl={album.youtubeUrl}
+              />
             </div>
           </div>
         </div>

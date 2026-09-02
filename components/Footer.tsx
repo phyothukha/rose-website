@@ -10,12 +10,32 @@ import tiktok from "@/assets/icons/tiktok-brands-solid.svg";
 import twitter from "@/assets/icons/x-twitter-brands-solid.svg";
 
 const socials = [
-  { name: "instagram", icon: instagram },
-  { name: "youtube", icon: youtube },
-  { name: "spotify", icon: spotify },
-  { name: "apple", icon: apple },
-  { name: "tiktok", icon: tiktok },
-  { name: "twitter", icon: twitter },
+  {
+    name: "instagram",
+    icon: instagram,
+    href: "https://www.instagram.com/roses_are_rosie/",
+  },
+  {
+    name: "youtube",
+    icon: youtube,
+    href: "https://www.youtube.com/channel/UCBo1hnzxV9rz3WVsv__Rn1g",
+  },
+  {
+    name: "spotify",
+    icon: spotify,
+    href: "https://open.spotify.com/artist/3eVa5w3URK5duf6eyVDbu9",
+  },
+  {
+    name: "apple",
+    icon: apple,
+    href: "https://music.apple.com/cn/artist/ros%C3%A9/1406242696?l=en-GB",
+  },
+  {
+    name: "tiktok",
+    icon: tiktok,
+    href: "https://www.tiktok.com/@roses_are_rosie",
+  },
+  { name: "twitter", icon: twitter, href: "https://x.com/numberonehq" },
 ] as const;
 
 const Footer = () => {
@@ -26,25 +46,26 @@ const Footer = () => {
           Rosé
         </h1>
         <nav className="flex justify-center gap-8 items-center">
-          {socials.map(({ name, icon }) => (
-            <Image
-              key={name}
-              width={
-                name === "instagram"
-                  ? 25
-                  : name === "youtube"
-                    ? 28
-                    : name === "tiktok"
-                      ? 20
-                      : 22
-              }
-              height={
-                name === "instagram" ? 25 : name === "youtube" ? 28 : 29.3
-              }
-              className="object-cover cursor-pointer"
-              src={icon}
-              alt={`${name} icon`}
-            />
+          {socials.map(({ name, icon, href }) => (
+            <a key={name} href={href} target="_blank" rel="noopener noreferrer">
+              <Image
+                width={
+                  name === "instagram"
+                    ? 25
+                    : name === "youtube"
+                      ? 28
+                      : name === "tiktok"
+                        ? 20
+                        : 22
+                }
+                height={
+                  name === "instagram" ? 25 : name === "youtube" ? 28 : 29.3
+                }
+                className="object-cover cursor-pointer"
+                src={icon}
+                alt={`${name} icon`}
+              />
+            </a>
           ))}
         </nav>
 

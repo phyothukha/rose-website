@@ -12,6 +12,9 @@ export type Album = {
   cover: StaticImageData;
   description: string;
   trackList: string[];
+  spotifyUrl: string;
+  appleMusicUrl: string;
+  youtubeUrl: string;
 };
 
 export const albums: Album[] = [
@@ -37,6 +40,10 @@ export const albums: Album[] = [
       "too bad for us",
       "dance all night",
     ],
+    spotifyUrl: "https://open.spotify.com/album/7kFyd5oyJdVX2pIi6P4iHE",
+    appleMusicUrl: "https://music.apple.com/cn/album/rosie/1771105914?l=en-GB",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=pZ1NdE69VTs&list=OLAK5uy_kgqVTHyLobo34hM4Kf3Qk8AHpoE6BdwOQ",
   },
   {
     slug: "apt",
@@ -47,6 +54,11 @@ export const albums: Album[] = [
     description:
       '"APT." is a song by New Zealand and South Korean singer Rosé and American singer-songwriter Bruno Mars. It was released through Atlantic Records on 18 October 2024, as the lead single from Rosé\'s debut studio album, Rosie (2024). The song was a commercial success, spending nine weeks at number one on the Billboard Global 200 and Global Excl. US charts. It was also the first song by a K-pop female soloist to top Australia\'s ARIA Singles Chart. The song was inspired by the Korean "apartment game" and was produced by Mars, Cirkut, Omer Fedi, and Rogét Chahayed. The music video was directed by Daniel Ramos and Mars.',
     trackList: ["APT. (Rosé & Bruno Mars)"],
+    spotifyUrl: "https://open.spotify.com/album/2IYQwwgxgOIn7t3iF6ufFD",
+    appleMusicUrl:
+      "https://music.apple.com/cn/album/apt-single/1773452219?l=en-GB",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=ekr2nIex040&list=OLAK5uy_llLPcNao5WNBkMYCOYvCnZ8Znn_vf6NTQ",
   },
   {
     slug: "r",
@@ -57,5 +69,10 @@ export const albums: Album[] = [
     description:
       '"R" is the debut single album recorded by Korean-New Zealand singer and BLACKPINK member ROSÉ. It was released on 12 March 2021 through YG Entertainment and Interscope Records. The single album was produced by Jon Bellion, ojivolta, Jorgen Odegard, Teddy, 24 and Brian Lee. "R" is primarily a pop record with influences of synth-pop, dance-pop, electropop, EDM, alternative rock, soft rock, indie rock and rock elements. The physical version debuted at number two on the Gaon Album Chart and became the best-selling album by a female soloist in the chart\'s history.',
     trackList: ["On The Ground", "Gone"],
+    spotifyUrl: "https://open.spotify.com/album/52MYcZ4Hzvy9vJcPicjfHZ",
+    appleMusicUrl:
+      "https://music.apple.com/cn/album/r-single/1590836284?l=en-GB",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=jNYwgodbyNc&list=OLAK5uy_lxWtXhGlQNbVdZA-QrNNWpjiMKzHLM2JQ",
   },
 ];

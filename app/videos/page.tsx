@@ -1,9 +1,8 @@
-import Image from "next/image";
 import React from "react";
 
 import { videos } from "./videos";
 import Pagination from "@/components/Pagination";
-import play from "@/assets/icons/play.svg";
+import VideoGallery from "@/components/VideoGallery";
 
 const PER_PAGE = 8;
 
@@ -25,33 +24,7 @@ const VideoPage = async ({
           Videos
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14">
-          {pageVideos.map(({ title, cover }) => (
-            <div key={title}>
-              <div className="relative w-full aspect-video overflow-hidden group cursor-pointer">
-                <Image
-                  src={cover}
-                  alt={title}
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 flex items-center justify-center group-hover:bg-black group-hover:bg-opacity-15 transition-all">
-                  <Image
-                    src={play}
-                    width={56}
-                    height={56}
-                    alt=""
-                    className="group-hover:scale-110 transition-transform"
-                  />
-                </div>
-              </div>
-              <p className="text-center mt-4 font-twentienty text-base md:text-lg">
-                {title}
-              </p>
-            </div>
-          ))}
-        </div>
+        <VideoGallery videos={pageVideos} />
 
         <Pagination
           currentPage={currentPage}
