@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@types/swiper": "^6.0.0",
+    "framer-motion": "^13.1.1",
     "next": "15.1.4",
     "nextjs-toploader": "^3.9.17",
     "react": "^19.0.0",

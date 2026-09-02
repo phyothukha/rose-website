@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import blacpink from "@/assets/blackpink-page/blackpink-group.jpg";
 import SectionCta from "@/components/SectionCta";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 const BlackpinkSection = () => {
   return (
@@ -11,14 +12,14 @@ const BlackpinkSection = () => {
         <SectionCta href="/blackpink" label="Check More" className="flex" />
       </div>
 
-      <div className=" max-w-4xl bg-red-400 h-[600px]  mx-auto">
+      <RevealOnScroll className="max-w-4xl bg-red-400 h-[600px] mx-auto">
         <Image
           src={blacpink}
           alt=""
           height={700}
           className="  object-fill w-full h-full  mx-auto my-auto  "
         />
-      </div>
+      </RevealOnScroll>
     </section>
   );
 };

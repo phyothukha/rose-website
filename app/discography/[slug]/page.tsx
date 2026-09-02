@@ -6,6 +6,8 @@ import React from "react";
 import { albums } from "../albums";
 import AlbumCard from "../AlbumCard";
 import AvailableOn from "@/components/AvailableOn";
+import SlideInLeft from "@/components/SlideInLeft";
+import SlideInRight from "@/components/SlideInRight";
 
 export function generateStaticParams() {
   return albums.map((album) => ({ slug: album.slug }));
@@ -36,7 +38,7 @@ const AlbumDetailPage = async ({
         </Link>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
-          <div className="relative w-full aspect-square max-w-md">
+          <SlideInLeft className="relative w-full aspect-square max-w-md">
             <Image
               src={album.cover}
               alt={album.title}
@@ -44,19 +46,23 @@ const AlbumDetailPage = async ({
               sizes="(min-width: 768px) 480px, 100vw"
               className="object-cover"
             />
-          </div>
+          </SlideInLeft>
 
-          <div>
-            <h1 className="font-orpheus font-bold text-[32px]">
+          <SlideInRight>
+            <h1 className="font-orpheus font-bold text-[36px] leading-[40px]">
               {album.title}
             </h1>
-            <p className="text-black/50 mt-1">{album.type}</p>
-            <p className="mt-3">
-              <span className="font-semibold">Released:</span>{" "}
+            <p className="font-twentienty font-light text-[18px] leading-[28px] text-black/50 mt-1">
+              {album.type}
+            </p>
+            <p className="font-twentienty font-light text-[18px] leading-[28px] mt-3">
+              <span className="font-twentienty font-semibold text-[18px] leading-[28px]">
+                Released:
+              </span>{" "}
               {album.releaseDate}
             </p>
 
-            <p className="mt-6 leading-relaxed text-black/80">
+            <p className="font-twentienty font-light text-[20px] leading-[28px] text-black/80 mt-6">
               {album.description}
             </p>
 
@@ -79,7 +85,7 @@ const AlbumDetailPage = async ({
                 youtubeUrl={album.youtubeUrl}
               />
             </div>
-          </div>
+          </SlideInRight>
         </div>
 
         <h2 className="font-orpheus font-bold text-[32px] mb-8">Releases</h2>

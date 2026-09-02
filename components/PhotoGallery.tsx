@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import type { Photo } from "@/app/photos/photos";
+import PhotoTile from "@/components/PhotoTile";
 
 type PhotoGalleryProps = {
   photos: Photo[];
@@ -43,21 +44,14 @@ const PhotoGallery = ({ photos }: PhotoGalleryProps) => {
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {photos.map((photo, i) => (
-          <button
+          <PhotoTile
             key={photo.src.src}
-            type="button"
+            src={photo.src}
+            alt={photo.alt}
+            caption={photo.alt}
             onClick={() => setActiveIndex(i)}
-            aria-label={`Open ${photo.alt}`}
-            className="relative w-full aspect-[4/5] overflow-hidden"
-          >
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-              className="object-cover object-top transition-transform duration-500 hover:scale-105"
-            />
-          </button>
+            className="aspect-[4/5]"
+          />
         ))}
       </div>
 

@@ -18,7 +18,9 @@ const BlackpinkDetailSection = () => {
   return (
     <div className="mt-20 bg-white text-[#141414]">
       <div className="w-full pt-9 pb-6 flex justify-center">
-        <h1 className="font-orpheus font-bold text-[36px]">BLACK PINK</h1>
+        <h1 className="font-orpheus font-bold text-[36px] leading-[40px]">
+          BLACK PINK
+        </h1>
       </div>
 
       <div className="relative w-full h-[380px] md:h-[550px] lg:h-[733px]">
@@ -57,7 +59,7 @@ const BlackpinkDetailSection = () => {
         </div>
 
         <h2 className="font-orpheus font-bold text-[28px] mb-4">Background</h2>
-        <div className="space-y-4 leading-relaxed mb-20">
+        <div className="space-y-4 font-twentienty font-light text-[20px] leading-[28px] mb-20">
           <p>
             Rosé joined YG Entertainment in 2012 after a successful audition and
             trained for four years before debuting with BLACKPINK in 2016. Known
@@ -83,10 +85,10 @@ const BlackpinkDetailSection = () => {
           Achievement &amp; Reward
         </h2>
 
-        <h3 className="font-semibold text-[20px] mb-2">
+        <h3 className="font-twentienty font-semibold text-[18px] leading-[28px] mb-2">
           Group Achievements (BLACKPINK):
         </h3>
-        <div className="space-y-4 leading-relaxed mb-10">
+        <div className="space-y-4 font-twentienty font-light text-[18px] leading-[28px] mb-10">
           <div>
             <p className="font-semibold">1. Guinness World Records</p>
             <p>
@@ -135,10 +137,10 @@ const BlackpinkDetailSection = () => {
           </div>
         </div>
 
-        <h3 className="font-semibold text-[20px] mb-2">
+        <h3 className="font-twentienty font-semibold text-[18px] leading-[28px] mb-2">
           Solo Achievements (Rosé):
         </h3>
-        <div className="space-y-4 leading-relaxed">
+        <div className="space-y-4 font-twentienty font-light text-[18px] leading-[28px]">
           <div>
             <p className="font-semibold">1. Solo Debut Success</p>
             <p>
