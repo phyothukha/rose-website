@@ -12,14 +12,13 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@types/swiper": "^6.0.0",
     "framer-motion": "^13.1.1",
-    "next": "15.1.4",
+    "next": "^15.5.25",
     "nextjs-toploader": "^3.9.17",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-player": "^2.16.0",
-    "swiper": "^11.2.1"
+    "swiper": "^14.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -37,5 +36,19 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "pnpm": {
+    "overrides": {
+      "postcss-selector-parser": ">=6.1.3",
+      "postcss": ">=8.5.23",
+      "@eslint/plugin-kit": ">=0.3.4",
+      "@humanfs/node": ">=0.16.8",
+      "flatted": ">=3.4.2",
+      "glob": ">=10.5.0 <11.0.0",
+      "js-yaml": ">=4.3.1",
+      "nanoid": ">=3.3.18",
+      "picomatch": ">=2.3.2",
+      "yaml": ">=2.8.3"
+    }
   }
 }
