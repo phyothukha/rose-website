@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import type { Photo } from "@/app/photos/photos";
 import PhotoTile from "@/components/PhotoTile";
@@ -13,13 +13,18 @@ type PhotoGalleryProps = {
 const PhotoGallery = ({ photos }: PhotoGalleryProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const close = () => setActiveIndex(null);
-  const showPrev = () =>
-    setActiveIndex((i) =>
-      i === null ? null : (i - 1 + photos.length) % photos.length,
-    );
-  const showNext = () =>
-    setActiveIndex((i) => (i === null ? null : (i + 1) % photos.length));
+  const close = useCallback(() => setActiveIndex(null), []);
+  const showPrev = useCallback(
+    () =>
+      setActiveIndex((i) =>
+        i === null ? null : (i - 1 + photos.length) % photos.length,
+      ),
+    [photos.length],
+  );
+  const showNext = useCallback(
+    () => setActiveIndex((i) => (i === null ? null : (i + 1) % photos.length)),
+    [photos.length],
+  );
 
   useEffect(() => {
     if (activeIndex === null) return;
@@ -36,7 +41,7 @@ const PhotoGallery = ({ photos }: PhotoGalleryProps) => {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [activeIndex]);
+  }, [activeIndex, close, showPrev, showNext]);
 
   const active = activeIndex !== null ? photos[activeIndex] : null;
 

@@ -85,21 +85,22 @@ const BiographyPage = () => {
           <div className="space-y-4 font-twentienty font-light text-[20px] leading-7 text-black/80">
             <p>
               Known for her unique voice, ethereal visuals, and captivating
-              stage presence, Rosé has played a pivotal role in BLACKPINK's
-              global success, contributing to hits like "How You Like That,"
-              "Ddu-Du Ddu-Du," and "Kill This Love." The group has shattered
-              records, becoming the first K-pop girl group to perform at
-              Coachella and earning numerous awards worldwide.
+              stage presence, Rosé has played a pivotal role in BLACKPINK&apos;s
+              global success, contributing to hits like &quot;How You Like
+              That,&quot; &quot;Ddu-Du Ddu-Du,&quot; and &quot;Kill This
+              Love.&quot; The group has shattered records, becoming the first
+              K-pop girl group to perform at Coachella and earning numerous
+              awards worldwide.
             </p>
             <p>
               Beyond music, Rosé is a fashion icon and ambassador for luxury
               brands like Yves Saint Laurent and Tiffany & Co., often gracing
               the front rows of major fashion shows and international campaigns.
               Her down-to-earth personality and artistic talents have earned her
-              millions of fans, collectively known as "BLINKs." Rosé continues
-              to inspire with her dedication to her craft, her influence on
-              global pop culture, and her ability to connect with audiences
-              worldwide.
+              millions of fans, collectively known as &quot;BLINKs.&quot; Rosé
+              continues to inspire with her dedication to her craft, her
+              influence on global pop culture, and her ability to connect with
+              audiences worldwide.
             </p>
           </div>
         </div>

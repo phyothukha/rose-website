@@ -50,10 +50,12 @@ const TermsOfUsePage = () => {
         <p className="font-twentienty font-light text-[20px] leading-7 text-black/80 mb-10">
           Welcome to the official website of Rosé from BLACKPINK rosé.com. By
           accessing or using this Site, you agree to comply with and be bound by
-          these Terms and Conditions ("Terms"). These Terms constitute a legal
-          agreement between you ("you," "your," or "user") and us ("we," "us,"
-          "our"), the operators of this Site. If you do not agree with any part
-          of these Terms, you must discontinue your use of the Site immediately.
+          these Terms and Conditions (&quot;Terms&quot;). These Terms constitute
+          a legal agreement between you (&quot;you,&quot; &quot;your,&quot; or
+          &quot;user&quot;) and us (&quot;we,&quot; &quot;us,&quot;
+          &quot;our&quot;), the operators of this Site. If you do not agree with
+          any part of these Terms, you must discontinue your use of the Site
+          immediately.
         </p>
 
         <div className="space-y-10">
