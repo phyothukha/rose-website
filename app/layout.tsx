@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Rosé - Myanmar Fan Group",
@@ -48,6 +49,7 @@ export default function RootLayout({
           <Footer />
         </main>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
