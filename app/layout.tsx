@@ -5,6 +5,7 @@ import { orpheusProFont, twentientyOneFont } from "@/font";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Rosé - Myanmar Fan Group",
@@ -46,6 +47,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </main>
+        <SpeedInsights />
       </body>
     </html>
   );
